@@ -8,24 +8,21 @@
 }
 
 body {
-  background: #1221cf;
+  background: #f0f0f1;
 }
 
 #app {
   width: 100vw;
   height: 100vh;
-  background: #fff8f8;
-
+  background: #f0f0f1;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column; 
 }
 
 #chat_container {
   flex: 1;
-  width:  90%;
-  height: 90%;
+  width: 100%;
+  height: 100%;
   overflow-y: scroll;
 
   display: flex;
@@ -35,7 +32,7 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   scroll-behavior: smooth;
 }
 
@@ -45,66 +42,52 @@ body {
 }
 
 .wrapper {
-  width: 95%;
+  width: 100%;
   padding: 15px;
 }
 
+.ai:before {
+  content: "";
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 20px solid #a6a3a3;
+  position: absolute;
+  top: 0px;
+  left: -10px; 
+}
+
 .ai {
-  background: #969aca;
+  background: #a6a3a3;
+  color: #343541;
+  border: 1px solid rgba(0, 0, 0, 0.363);
+  position: relative;
+  padding: 10px;
+  left: 40px;
+  justify-content:  flex-start;
+  max-width: 75%;
+  border-radius: 15px;
 }
 
 .chat {
-  width: 100%;
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
-
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 10px;
-}
-
-.profile {
-  width: 36px;
-  height: 36px;
-  border-radius: 5px;
-
-  background: #CB602B;
-
-  display: flex;
-  justify-content: center;
   align-items: center;
-}
-
-.ai .profile {
-  background: #32568F;
-}
-
-.profile img {
-  width: 60%;
-  height: 60%;
-  object-fit: contain;
+  padding:10px;
+  justify-content:  flex-start;
 }
 
 .message {
-  flex: 1;
-
-  color: #0a0a0a;
+  color: #000;
   font-size: 20px;
-
+  padding:10px;
   max-width: 100%;
   overflow-x: scroll;
-
-  /*
-   * white space refers to any spaces, tabs, or newline characters that are used to format the CSS code
-   * specifies how white space within an element should be handled. It is similar to the "pre" value, which tells the browser to treat all white space as significant and to preserve it exactly as it appears in the source code.
-   * The pre-wrap value allows the browser to wrap long lines of text onto multiple lines if necessary.
-   * The default value for the white-space property in CSS is "normal". This tells the browser to collapse multiple white space characters into a single space, and to wrap text onto multiple lines as needed to fit within its container.
-  */
   white-space: pre-wrap; 
-
   -ms-overflow-style: none;
   scrollbar-width: none;
+  font-family: "Alegreya Sans", sans-serif;
+  font-weight: 500;
 }
 
 /* hides scrollbar */
@@ -112,15 +95,40 @@ body {
   display: none;
 }
 
+.user .chat {
+    justify-content: flex-end;
+}
+.user .message {
+  background: #0084ff;
+  color: #fff;
+  padding: 10px;
+  max-width: 75%;
+  position: relative;
+  border-radius: 15px;
+  justify-content: flex-end;
+}
+
+.user:before {
+  content: "";
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 20px solid #0084ff;
+  position: absolute;
+  top: 25px;
+  right: 15px;
+  transform: rotate(180deg);
+}
+
+
 form {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
   padding: 10px;
-  background: #eff0fa;
-  border: 2px solid blue;
-  border-radius: 20px;
-
+  background: #ffF;
+  border-radius: 10px;
+  border: 2px solid #000;
+  outline: none;
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -128,15 +136,12 @@ form {
 
 textarea {
   width: 100%;
-
-  color: rgb(37, 37, 39);
+  color: #000;
   font-size: 18px;
-
   padding: 10px;
-  background: transparent;
-  border-radius: 5px;
-  border: none;
+  background: #fff;
   outline: none;
+  border: none;
 }
 
 button {
@@ -145,7 +150,6 @@ button {
   cursor: pointer;
   background: transparent;
 }
-
 form img {
   width: 30px;
   height: 30px;

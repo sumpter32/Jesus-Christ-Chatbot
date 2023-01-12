@@ -1,4 +1,4 @@
-import bot from './assets/srs.png'
+import bot from './assets/jesus.png'
 import user from './assets/user.svg'
 
 const form = document.querySelector('form')
@@ -44,24 +44,18 @@ function generateUniqueId() {
     return `id-${timestamp}-${hexadecimalString}`;
 }
 
-function chatStripe(isAi, value, uniqueId) {
+const chatStripe = (isAi, value, uniqueId) => {
     return (
-        `
-        <div class="wrapper ${isAi && 'ai'}">
+      `
+          <div class="wrapper ${isAi ? 'ai' : 'user'}">
             <div class="chat">
-                <div class="profile">
-                    <img 
-                      src=${isAi ? bot : user} 
-                      alt="${isAi ? 'bot' : 'user'}" 
-                    />
-                </div>
-                <div class="message" id=${uniqueId}>${value}</div>
-            </div>
-        </div>
-    `
+                  <div class="message" id=${uniqueId}>${value}</div>
+              </div>
+          </div>
+      `
     )
-}
-
+  }
+  
 const handleSubmit = async (e) => {
     e.preventDefault()
 
@@ -86,7 +80,7 @@ const handleSubmit = async (e) => {
     // messageDiv.innerHTML = "..."
     loader(messageDiv)
 
-    const response = await fetch('https://srs-chat-bot.onrender.com/', {
+    const response = await fetch('https://what-would-jesus-say.onrender.com/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
