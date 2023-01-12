@@ -14,10 +14,13 @@ body {
 #app {
   width: 100vw;
   height: 100vh;
-  background: #f0f0f1;
+  background-image: url("assets/bg.jpg");
+  background-size: cover;
+  background-position: center;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
 }
+
 
 #chat_container {
   flex: 1;
@@ -66,6 +69,14 @@ body {
   justify-content:  flex-start;
   max-width: 75%;
   border-radius: 15px;
+}
+
+.bot-img {
+  position: absolute;
+  top: -50px; /* or any desired value */
+  left: 0px; /* or any desired value */
+  width: 50px; /* or any desired value */
+  height: 50px; /* or any desired value */
 }
 
 .chat {
